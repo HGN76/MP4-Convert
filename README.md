@@ -10,5 +10,5 @@ Convert Full HD MP4's to a specific resolution [in this case 1080x608] using Han
 ## How to run mp4-convert.sh
 ```
 ~/$ chmod +x mp4-convert.sh
-~/$ ./mp4-convert
+~/$ ./mp4-convert.sh
 ```
