@@ -5,8 +5,8 @@
 # Description: Convert Full HD MP4's to a specific resolution [in this case 1080x608] using HandBrakeCL
 # This script depends on the following command line tool: HandBrakeCLI    http://handbrake.fr/
 
-SRC=/home/hagen/Videos/Input/
-DEST=/home/hagen/Videos/Output
+SRC=/home/user/Videos/Input/
+DEST=/home/user/Videos/Output
 DEST_EXT=mp4
 HANDBRAKE_CLI=/usr/bin/HandBrakeCLI
 
