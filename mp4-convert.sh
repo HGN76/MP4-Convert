@@ -2,7 +2,7 @@
 # Author: Michael Hagen Thut
 # Year: 2016
 # Name of this script: mp4-convert.sh
-# Convert Full HD MP4's to a specific resolution [in this case 1080x608] using HandBrakeCL
+# Description: Convert Full HD MP4's to a specific resolution [in this case 1080x608] using HandBrakeCL
 
 SRC=/home/user/Videos/Input/
 DEST=/home/user/Videos/Output
