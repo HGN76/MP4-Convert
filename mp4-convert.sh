@@ -14,11 +14,12 @@ do
 	filename=$(basename "$line")
 	extension=${filename##*.}
 	filename=${filename%.*}
-	#echo $line
+	# echo $line
 	FOLDER=$(echo $line | cut -d "/" -f6)
-	#echo $FOLDER
+	# echo $FOLDER
 	mkdir $DEST/$FOLDER/
-
+	
+	# HandBrakeCLI Guide: https://trac.handbrake.fr/wiki/CLIGuide
 	$HANDBRAKE_CLI -i $line -o $DEST/$FOLDER/$filename.$DEST_EXT -O -e x264 --x264-preset veryslow --x264-tune film --x264-profile baseline --encoder-level 3.1 -q 18 --cfr -a none -w 1080 -l 608 --crop 0:0:0:0 -Y 608 -X 1080 --loose-anamorphic --modulus 2
 
 	rm $line
