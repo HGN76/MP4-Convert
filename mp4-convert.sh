@@ -17,6 +17,7 @@ SRC="/home/user/Videos/Input/"
 DEST="/home/user/Videos/Output"
 DEST_EXT=mp4
 DATE=$(date +"%Y-%m-%d:%H:%M:%S")
+LOG_DEST="/home/user/Desktop/HandBrake-Logs/"
 
 # HandBrakeCLI Guide: https://trac.handbrake.fr/wiki/CLIGuide
 HANDBRAKE_CLI="/usr/bin/HandBrakeCLI"
@@ -27,13 +28,13 @@ do
 	filename=$(basename "$line")
 	extension=${filename##*.}
 	filename=${filename%.*}
-	# echo $line
+	#echo $line
 	FOLDER=$(echo $line | cut -d "/" -f6)
 	#echo $FOLDER
 	#mkdir $DEST/$FOLDER/
 	mkdir -p $DEST/$FOLDER/
 
-	$HANDBRAKE_CLI --input $line --output $DEST/$FOLDER/$filename.$DEST_EXT $HANDBRAKE_SETTINGS 2> "$DATE-mp4-convert.log"
+	$HANDBRAKE_CLI --input $line --output $DEST/$FOLDER/$filename.$DEST_EXT $HANDBRAKE_SETTINGS 2>> "$LOG_DEST/$DATE-$filename-mp4-convert.log"
 
 	# remove Input File
 	#rm $line
