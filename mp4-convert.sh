@@ -29,13 +29,14 @@ do
 	filename=${filename%.*}
 	# echo $line
 	FOLDER=$(echo $line | cut -d "/" -f6)
-	# echo $FOLDER
-	mkdir $DEST/$FOLDER/
+	#echo $FOLDER
+	#mkdir $DEST/$FOLDER/
+	mkdir -p $DEST/$FOLDER/
 
 	$HANDBRAKE_CLI --input $line --output $DEST/$FOLDER/$filename.$DEST_EXT $HANDBRAKE_SETTINGS 2> "$DATE-mp4-convert.log"
 
 	# remove Input File
-	rm $line
+	#rm $line
 
 	echo "Job finished. Excellent ;-)"
 done
